@@ -1,0 +1,79 @@
+<% layout('/layout') %>
+
+<div id="main_body">
+    <p id="title">que voulez vous comme données?</p>
+    <table class="center">
+        <tr>
+            <th>
+                Organisatrice:
+            </th>
+            <th>
+                <input id="org" type="text" name="nom"/>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Type d'activité:
+            </th>
+            <th>
+                <select id="activite" name="activites">
+                    <option value="randonnee">Randonnée</option>
+                    <option value="visite">Visite en groupe</option>
+                    <option value="culturelle">Culturelle</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Lieu:
+            </th>
+            <th>
+                    <input id="lieu" type="text" name="lieu_val"/>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Date:
+            </th>
+            <th>
+                <input id="date" type="date" name="datepick"/>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Description de l'activité:
+            </th>
+            <th>
+                <textarea id="description" name="description_value" rows="10" cols="40" placeholder="Rentrez la description ici:"></textarea>
+            </th>
+        </tr>
+    </table>
+    <table class="center">
+        <tr>
+            <button id="post_data" >Envoyer</button>
+        </tr>
+    </table>
+</div>
+<script>
+    function envoyer_info(event){
+        if(event){event.preventDefault();}
+        var data = {
+            organisatrice:  $('#org').val(),
+            activite:       $('#activite').val(),
+            lieu:           $('#lieu').val(),
+            date:           $('#date').val(),
+            description:    $('#description').val(),
+        };
+        console.log("Sending data: %O", data);
+        
+        $.ajax({
+            method: 'POST',
+            url:'/sorties',
+            data: data,
+        }).done(function(){console.log("Current user updated");});
+    }
+
+    $(document).ready(function(){
+        $('#post_data').on('click', envoyer_info);
+    });
+</script>

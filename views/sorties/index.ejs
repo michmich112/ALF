@@ -1,0 +1,14 @@
+<% layout('/layout') %>
+
+<div id="main_body">
+    <table>
+        <% sorties.forEach(function(sortie){ %>
+        <tr>
+            <td><%= sortie.organisatrice %></td>
+            <td><%= sortie.lieu %></td>
+            <td><%= sortie.date %></td>
+            <td><a href="/sorties/<% sortie.id %>">View</a></td>
+        </tr>
+        <% }) %>
+    </table>
+</div>

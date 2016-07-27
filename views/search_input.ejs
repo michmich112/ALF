@@ -1,0 +1,30 @@
+<% layout('/layout') %>
+<div id='main_body'>
+    <table>
+        <tr>
+            <td>
+                Organisatrice
+            </td>
+            <td>
+                <input id="org" type="text"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    function send_request(event){
+        var data = {organisatrice: $('#org').val(), };
+    
+        console.log('Sending request for: %O', data);
+        
+        $.ajax({
+            method: 'POST',
+            url:'/search',
+            data: data
+        }).done(function(){connsole.log("Info requested");});
+    }
+    
+    $(document).ready(function(){
+        $('#post_data').on('click', send_request);
+    });
+</script>

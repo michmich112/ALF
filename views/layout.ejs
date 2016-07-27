@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Michel Cantacuzene">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+<% if (settings.env === 'development') { %>
+    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
+<% } else { %>
+    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
+<% } %>
+    <script language='javascript'>
+      "use strict";
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <ul>
+        <li><a href="/">Menu</a></li>
+        <li><a href="/sorties/new">Upload</a></li>
+        <li><a href="/search_input">Visionner</a></li>
+      </ul>
+    </div>
+    <!-- SCRIPTS  {{{ -->
+<% if (settings.env === 'development') { %>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<% } else { %>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<% } %>
+    <!-- SCRIPTS  }}} -->
+    <%- body %>
+  </body>
+</html>

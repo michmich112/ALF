@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(150,150,220);
+}
+
+#main_body{
+    font-family: Verdana;
+    font-size: 14px;
+    background-color: rgba(180,35,20,0.3);
+    text-align: center;
+    padding-top: 53px;
+    width:100%;
+    margin-top:30px;
+}
+
+#title{
+    font-family: Arial;
+    font-size: 25px;
+    color: rgb(100,100,100);
+    border: 3px solid red;
+    display: inline;
+}
+
+#description{
+    width:400px;
+    height: 100px;
+}
+
+#sub_button{
+    color: rgb(20,40,180);
+}
+
+.center{
+    margin: auto;
+    left:50%;
+}
+
+#banner li a:link,a:visited{
+    text-decoration: none;
+    color: rgb(30,150,20);
+}
+
+#banner li a:hover{
+    text-decoration: none;
+    color: rgb(250,250,250);
+}
+
+#banner{
+	z-index: 1;
+	position:fixed;
+	top:0px;
+	left: 0px;
+	width:100%;
+	margin:0px;
+	font-family:Verdana;
+}
+
+#banner ul {
+    list-style-type: none;
+    margin: 3px;
+    padding: 3px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#banner li {
+    float: left;
+    margin-left: 10px;
+}
+
+#article {
+    text-align: center;
+}
