@@ -1,0 +1,18 @@
+# Node stuff
+node_modules
+bower_components/
+
+# Heroku local configuration
+.env
+
+# This site's private stuff
+data/
+
+# logs
+logs/
+log/
+*.log
+
+# temp stuff
+tmp/
+*.tmp
